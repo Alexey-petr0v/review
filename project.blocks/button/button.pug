@@ -1,0 +1,8 @@
+mixin addButton(text, color, close_but)
+  .button
+    .button__background(class='button__background_'+color)
+      .button__elements
+        .button__text= text
+        if close_but
+          .button__close-but.material-icons.md-24
+            p.button__close-but-text= 'close'

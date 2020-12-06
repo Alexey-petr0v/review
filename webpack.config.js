@@ -26,6 +26,10 @@ module.exports = {
       template: PATHS.pages + '/index.pug',
       filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+      template: PATHS.pages + '/ui-kit.pug',
+      filename: 'ui-kit.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     })
@@ -88,7 +92,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|svg)$/,
-        exclude: path.resolve(__dirname, 'project.blocks/fonts/'),
+        exclude: path.resolve(__dirname, 'library.blocks/fonts/'),
         use: [
                 {
                   loader: 'file-loader?name=images/[name].[ext]'
