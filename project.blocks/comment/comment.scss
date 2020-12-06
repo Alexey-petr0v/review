@@ -1,0 +1,35 @@
+.comment {
+  &__box {
+    display: flex;
+    flex-direction: column;
+    max-width: 496px;
+    .comment__text {
+      background: #FAFAFA;
+      box-sizing: border-box;
+      border: 1px solid #EAECF0;
+      border-radius: 6px;
+      resize: none;
+      flex-grow: 1;
+      padding: 12px;
+
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      color: #7F899E;
+    }
+    .comment__characters {
+      display: flex;
+     justify-content: flex-end;
+      margin-top: 4px;
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      color: #7F899E;
+    }
+  }
+}

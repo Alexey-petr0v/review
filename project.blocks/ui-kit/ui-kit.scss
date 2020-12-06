@@ -19,6 +19,7 @@
     font-family: Montserrat
   }
   &__columns {
+    display: flex;
     flex-direction: row;
     .ui-kit__column:nth-child(2) { margin-left: 20px; }
   }

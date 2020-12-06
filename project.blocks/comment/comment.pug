@@ -1,0 +1,8 @@
+mixin addComment(name)
+  .comment
+    .comment__box
+      textarea.comment__text(name=name placeholder="Комментарий")
+      .comment__characters
+        span.comment__char-printed 12
+        span.comment__char-slash /
+        span.comment__char-max 500
