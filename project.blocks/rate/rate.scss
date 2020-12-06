@@ -1,0 +1,54 @@
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  .rate {
+    display: -webkit-flex; 
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &__input ~ label { margin-right: 20px }
+    label > .rate__title { color: rgba(31, 32, 65, 0.5) }
+    &__input {
+      display: none;
+      &~ label.rate__label {
+        margin-right: 2px;
+        cursor: pointer;
+        font-size: 22px;
+      }
+      &~ label .rate__title {
+        display: inline-block;
+        width: 22px;
+        background: #EAECF0;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #EAECF0;
+        &_active {
+          background: #53C6D1;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: #53C6D1;
+        }
+      }
+      &+ .rate__label > .rate__title {
+        &:nth-child(1) { display: inline-block }
+        &:nth-child(2) { display: none }
+      }
+      &:checked, &:first-child, &:first-child ~ .rate__input {
+        &+ .rate__label > .rate__title {
+          &:nth-child(1) { display: none }
+          &:nth-child(2) { display: inline-block }
+        }
+      }
+      &:checked ~ .rate__input {
+        &+ .rate__label > .rate__title {
+          &:nth-child(1) { display: inline-block }
+          &:nth-child(2) { display: none }
+        }
+      }
+    }
+  }
+}
