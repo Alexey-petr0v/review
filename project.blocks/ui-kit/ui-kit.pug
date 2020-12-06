@@ -1,20 +1,43 @@
 include ../button/button
+include ../rate/rate
+
+-
+  var rate_buttons_1 = [
+    {value: "1", toggle: false},
+    {value: "2", toggle: false},
+    {value: "3", toggle: false},
+    {value: "4", toggle: true},
+    {value: "5", toggle: false}
+  ]
+
+-
+  var rate_buttons_2 = [
+    {value: "1", toggle: false},
+    {value: "2", toggle: true},
+    {value: "3", toggle: false},
+    {value: "4", toggle: false},
+    {value: "5", toggle: false}
+  ]
 
 .ui-kit
   .ui-kit__box
-    .ui-kit__element
-      h2 BUTTON
-      +addButton('Отправить', 'light-blue')
-    .ui-kit__element
-      .ui-kit__column
-        h2 IMAGE
-      .ui-kit__column
-        h2 IMAGE_SMALL
-    .ui-kit__element
-      h2 RATE
-    .ui-kit__element
-      h2 COMMENT
-    .ui-kit__element
-      h2 IMAGE-INSERTER
-    .ui-kit__element
-      h2 ALERT
+    .ui-kit__elements
+      h1.ui-kit__title Ui-kit
+      .ui-kit__element
+        h2.ui-kit__title BUTTON
+        +addButton('Отправить', 'light-blue')
+      .ui-kit__element.ui-kit__columns
+        .ui-kit__column
+          h2.ui-kit__title IMAGE
+        .ui-kit__column
+          h2.ui-kit__title IMAGE_SQUARE
+      .ui-kit__element
+        h2.ui-kit__title RATE
+        +addRate(rate_buttons_1, 1)
+        +addRate(rate_buttons_2, 2)
+      .ui-kit__element
+        h2.ui-kit__title COMMENT
+      .ui-kit__element
+        h2.ui-kit__title IMAGE-INSERTER
+      .ui-kit__element
+        h2.ui-kit__title ALERT
