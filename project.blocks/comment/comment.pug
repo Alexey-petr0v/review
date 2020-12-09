@@ -1,8 +1,8 @@
-mixin addComment(name)
+mixin addComment
   .comment
     .comment__box
-      textarea.comment__text(name=name placeholder="Комментарий")
+      textarea.comment__text(v-bind:name="name" v-model="text" placeholder="Комментарий")
       .comment__characters
-        span.comment__char-printed 12
+        span.comment__char-printed= "{{printed}}"
         span.comment__char-slash /
-        span.comment__char-max 500
+        span.comment__char-max= "{{max}}"
