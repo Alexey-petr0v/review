@@ -1,44 +1,4 @@
 .app {
-  &__h1 {
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
-    color: #3C3C3C;
-  }
-  &__h2 {
-    font-family: Montserrat;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    color: #3C3C3C;
-  }
-  &__section {
-    margin-left: 32px;
-  }
-  &__line {
-    border: none;
-    color: #EAECF0;
-    background-color: #EAECF0;
-    height: 1px;
-    border-radius: 1px;
-  }
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 506px;
-    height: 55px;
-  }
-  &__close {
-    font-size: 19px;
-    color: #7F899E;
-  }
-  &__close {
-    cursor: pointer;
-  }
   &__rewiew {
     display: flex;
     align-items: center;
@@ -51,23 +11,94 @@
     height: 100vh;
     &_hide { display: none }
   }
+
   &__inputs {
     width: 560px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
     background: #FFFFFF;
-    border-radius: 16px;
+    border-radius: 16px 16px 0px 0px;
+  }
+  &__center {
+    background: #FFFFFF;
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #FFFFFF;
+    border-radius: 0px 0px 16px 16px;
+    height: 67px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 32px;
+    max-width: 506px;
+    flex-grow: 1;
+  }
+  &__line {
+    border: none;
+    color: #EAECF0;
+    background-color: #EAECF0;
+    height: 1px;
+    border-radius: 1px;
   }
   &__columns {
-    margin-top: 24px;
+    margin-left: 32px;
+  }
+  &__buttons {
+    margin-right: 16px;
+  }
+
+  &__right {
+    margin-right: 21px;
+  }
+  &__column {
+    max-width: 506px;
+    &_first {
+      margin-top: 24px;
+    }
+  }
+
+  &__h1 {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: #3C3C3C;
+  }
+  &__close {
+    font-size: 19px;
+    color: #7F899E;
+    cursor: pointer;
   }
   &__ratings {
     display: flex;
     flex-wrap: wrap;
   }
+
   &__rate {
     margin-right: 57px;
     margin-bottom: 26px;
   }
+
   &__rate-title {
     margin-bottom: 12px;
+  }
+  &__h2 {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #3C3C3C;
   }
 }

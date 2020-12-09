@@ -6,23 +6,32 @@ mixin addApp()
       +addButton("Оставить отзыв", "light-blue")
     .app__rewiew(:class="hide")
       .app__inputs
-        .app__section.app__top
-          h1.app__title.app__h1= "Мой отзыв"
-          .app__close.material-icons.md-24(@click="openRewiew")= "close"
-        hr.app__line
-        .app__section.app__columns
-          .app__column
-            .app__ratings
-              .app__rate
-                h2.app__rate-title.app__h2= "Скорость"
-                rate(:currentRate=3)
-              .app__rate
-                h2.app__rate-title.app__h2= "Скорость отдачи видео"
-                rate
-              .app__rate
-                h2.app__rate-title.app__h2= "Качество"
-                rate
-              .app__rate
-                h2.app__rate-title.app__h2= "Пунктуальность"
-                rate
-            comment(:name="'comment1'" :max="500")
+        .app__top
+          .app__nav
+            .app__nav-left
+              h1.app__title.app__h1= "Мой отзыв"
+            .app__nav-right
+              .app__close.material-icons.md-24(@click="openRewiew")= "close"
+        .app__center
+          hr.app__line
+          .app__columns
+            .app__column.app__column_first
+              .app__ratings
+                .app__rate
+                  h2.app__rate-title.app__h2= "Скорость"
+                  rate(:currentRate=3)
+                .app__rate
+                  h2.app__rate-title.app__h2= "Скорость отдачи видео"
+                  rate
+                .app__rate
+                  h2.app__rate-title.app__h2= "Качество"
+                  rate
+                .app__rate
+                  h2.app__rate-title.app__h2= "Пунктуальность"
+                  rate
+              comment(:name="'comment1'" :max="500")
+          hr.app__line
+        .app__bottom
+          .app__buttons
+            .app__button(@click="openRewiew")
+              +addButton("Отправить", "light-blue")
