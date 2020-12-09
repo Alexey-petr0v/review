@@ -3,6 +3,13 @@
 @import '../project.blocks/rate/rate.scss';
 @import '../project.blocks/comment/comment.scss';
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
