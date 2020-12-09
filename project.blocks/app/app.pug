@@ -1,4 +1,16 @@
+include ../button/button
+include ../rate/rate
+
 mixin addApp()
-  .app__columns
-    .app__column
-      comment(:name="'comment1'" :max="500")
+  .app__box
+    .app__button(@click="openRewiew")
+      +addButton("Оставить отзыв", "light-blue")
+    .app__rewiew(:class="hide")
+      .app__inputs
+        .app__section.app__top
+          h1.app__title.app__h1= "Мой отзыв"
+          .app__close.material-icons.md-24(@click="openRewiew")= "close"
+        hr.app__line
+        .app__section.app__columns
+          .app__column
+            comment(:name="'comment1'" :max="500")
