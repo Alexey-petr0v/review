@@ -1,12 +1,6 @@
-mixin addRate(name, items, num_elem)
+mixin addRate
   .rate
-    - for (var x = 0; x < items.length; x++)
-      - var label_class = "rate__label material-icons md-24"
-      - var id = "rate-" +num_elem+"-"+x
-      if items[x].toggle
-        input(id=id, name=name value=items[x].value, class="rate__input", type="radio", checked="checked")
-      else
-        input(id=id, name=name, value=items[x].value, class="rate__input", type="radio")
-      label(for=id, class=label_class)
-        span.rate__title= "star_rate"
-        span.rate__title.rate__title_active= "star_rate"
+    .rate__box
+      input(name="name", :value="currentRate", type="hidden")
+      .rate__star(v-for="(item, index) in stars" :key="item.act")
+        p.rate__title.material-icons.md-24(:class="item.act", :data-value="index+1", @click="addCheck")= "star_rate"
