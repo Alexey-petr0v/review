@@ -8,13 +8,11 @@
   &__title {
     color: #EAECF0;
     cursor: pointer;
-    &_active {
-      color: #53C6D1;
-    }
-  }
-  p {
     width: 21px;
     font-size: 21px;
     margin-right: 12px;
+    &_active {
+      color: #53C6D1;
+    }
   }
 }

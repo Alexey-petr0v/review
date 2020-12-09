@@ -10,7 +10,7 @@
   export default {
     data: function () {
       return {
-        hide: ""
+        hide: "app__rewiew_hide"
       }
     },
     components: {

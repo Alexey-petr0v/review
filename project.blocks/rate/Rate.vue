@@ -6,7 +6,6 @@
 <script>
   export default {
     props: {
-      active: String,
       lengthRate: {
         type: Number,
         default: 5
@@ -18,11 +17,8 @@
     },
     data: function() {
       return {
-        active: "aaaabbb",
         stars: new Array()
       }
-    },
-    computed: {
     },
     methods: {
       addCheck(event){
@@ -33,7 +29,6 @@
         this.addActivity(this.currentRate)
       },
       addActivity(currentValue) {
-        console.log(currentValue)
         for (let i = 0; i < currentValue; i++) {
           this.stars[i].act = "rate__title_active"
         }
@@ -44,6 +39,6 @@
         this.$data.stars.push({act: ""})
       }
       this.addActivity(this.$props.currentRate)
-    },
+    }
   }
 </script>
