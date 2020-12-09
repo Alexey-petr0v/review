@@ -5,6 +5,7 @@
 
 <script>
   import Comment from '../comment/Comment.vue';
+  import Rate from '../rate/Rate.vue';
 
   export default {
     data: function () {
@@ -13,6 +14,7 @@
       }
     },
     components: {
+      Rate,
       Comment
     },
     methods: {
