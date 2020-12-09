@@ -35,10 +35,10 @@
       }
     },
     mounted: function () {
-      for (let i = 0; i < this.$props.lengthRate; i++) {
-        this.$data.stars.push({act: ""})
+      for (let i = 1; i <= this.$props.lengthRate; i++) {
+        let activeStatus = i <= this.$props.currentRate ? "rate__title_active" : "";
+        this.$data.stars.push({act: activeStatus})
       }
-      this.addActivity(this.$props.currentRate)
     }
   }
 </script>
