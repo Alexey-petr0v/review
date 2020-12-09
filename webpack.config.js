@@ -21,15 +21,11 @@ module.exports = {
     path: PATHS.docs,
   },
   plugins: [
-    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: PATHS.pages + '/index.pug',
       filename: 'index.html'
     }),
-    new HtmlWebpackPlugin({
-      template: PATHS.pages + '/ui-kit.pug',
-      filename: 'ui-kit.html'
-    }),
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     })
@@ -37,27 +33,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        loader:  'vue-loader',
-        options: {
-          loader: {
-            scss: 'vue-style-loader!css-loader!sass-loader'
-          }
-        }
-      },
-      {
-        test: /\.css$/i,
-        use: [
-          'vue-style-loader',
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ],
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: [
           'vue-style-loader',
-          'style-loader',
+          {
+            loader: 'style-loader'
+          },
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
@@ -75,10 +56,34 @@ module.exports = {
         ]
       },
       {
+        test: /\.css$/i,
+        use: [
+          'vue-style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ],
+      },
+      {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        oneOf: [
+          // это применяется к `<template lang="pug">` в компонентах Vue
+          {
+            resourceQuery: /^\?vue/,
+            use: ['pug-plain-loader']
+          },
+          // это применяется к импортам pug внутри JavaScript
+          {
+            use: ['raw-loader', 'pug-plain-loader']
+          }
+        ]
+      },
+      {
+        test: /\.vue$/,
+        loader:  'vue-loader',
         options: {
-            pretty: true
+          loader: {
+            scss: 'vue-style-loader!css-loader!sass-loader'
+          }
         }
       },
       {
@@ -103,7 +108,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // Ensure the right Vue build is used
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
