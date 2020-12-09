@@ -1,0 +1,76 @@
+
+.app {
+  &__h1 {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: #3C3C3C;
+  }
+  &__h2 {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #3C3C3C;
+  }
+  &__section {
+    margin-left: 32px;
+  }
+  &__line {
+    border: none;
+    color: #EAECF0;
+    background-color: #EAECF0;
+    height: 1px;
+    border-radius: 1px;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 506px;
+    height: 55px;
+  }
+  &__close {
+    font-size: 19px;
+    color: #7F899E;
+  }
+  &__close {
+    cursor: pointer;
+  }
+  &__rewiew {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background: rgba(0,0,0,.3);
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    &_hide {
+      display: none;
+    }
+  }
+  &__inputs {
+    width: 560px;
+    background: #FFFFFF;
+    border-radius: 16px;
+  }
+  &__columns {
+    margin-top: 24px;
+  }
+  &__ratings {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__rate {
+    margin-right: 57px;
+    margin-bottom: 26px;
+  }
+  &__rate-title {
+    margin-bottom: 12px;
+  }
+}
