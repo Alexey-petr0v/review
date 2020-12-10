@@ -1,9 +1,26 @@
+$color_no-active: #EAECF0;
+$color_active: #53C6D1;
+
 .rate {
   display: -webkit-flex; 
   display: flex;
   &__box {
     display: -webkit-flex; 
     display: flex;
+    &:hover {
+      .rate__star .rate__title {
+        color: $color_active;
+      }
+    }
+  }
+  &__star {
+    &:hover {
+      &~ .rate__star {
+        .rate__title {
+          color: $color_no-active;
+        }
+      }
+    }
   }
   &__title {
     color: #EAECF0;
