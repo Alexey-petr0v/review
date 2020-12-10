@@ -6,16 +6,18 @@
 <script>
   import Comment from '../comment/Comment.vue';
   import Rate from '../rate/Rate.vue';
+  import ImageLoader from '../image-loader/image-loader.vue';
 
   export default {
     data: function () {
       return {
-        hide: "app__rewiew_hide"
+        hide: ""
       }
     },
     components: {
       Rate,
-      Comment
+      Comment,
+      ImageLoader
     },
     methods: {
       openRewiew() {
