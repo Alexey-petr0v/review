@@ -8,7 +8,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 const PATHS = {
   pages: path.resolve(__dirname, "pages"),
   docs: path.resolve(__dirname, "docs"),
-  projBlocks: path.resolve(__dirname, "project.blocks"),
+  projBlocks: path.resolve(__dirname, "project.blocks").replace(/\\/g, "/"),
   libBlocks: path.resolve(__dirname, "library.blocks"),
 }
 
@@ -21,6 +21,12 @@ module.exports = {
     path: PATHS.docs,
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { context: PATHS.projBlocks, from: "**/images/*", to: "images/", flatten: true },
+        
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: PATHS.pages + '/index.pug',
       filename: 'index.html'
