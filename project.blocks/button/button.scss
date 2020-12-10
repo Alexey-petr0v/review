@@ -26,6 +26,15 @@ $color_green: rgba(21, 167, 88, 1);
     }
     &_green {
       background-color: $color_green;
+      .button__text {
+        font-family: 'Montserrat Medium';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
       .button__close-but-text {
         color: $color_green;
       }
@@ -38,7 +47,7 @@ $color_green: rgba(21, 167, 88, 1);
   &__text {
     height: 20px;
     color: #FFFFFF;
-    font-family: Montserrat;
+    font-family: 'Montserrat SemiBold';
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
