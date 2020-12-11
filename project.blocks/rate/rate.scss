@@ -23,12 +23,12 @@ $color_active: #53C6D1;
     }
   }
   &__title {
-    color: #EAECF0;
+    color: $color_no-active;
     cursor: pointer;
     font-size: 32px;
     margin-right: 2px;
     &_active {
-      color: #53C6D1;
+      color: $color_active;
     }
   }
 }
