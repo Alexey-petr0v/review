@@ -2,22 +2,25 @@ include ../button/button
 
 mixin addApp()
   .app__box
-    .app__button(@click="openRewiew")
+    .app__button(@click="toggleRewiew")
       +addButton("Оставить отзыв", "light-blue")
-    .app__rewiew(:class="hide")
+    .app__rewiew(:class="[rewiewMobileFlag, rewiewNextFlag, rewiewSentFlag, rewiewHideFlag]")
       .app__inputs
         .app__top
+          hr.app__handle
           .app__nav
             .app__nav-left
+              .app__back.material-icons.md-24(@click="toggleNext")= "arrow_back"
               h1.app__title.app__h1= "Мой отзыв"
             .app__nav-right
-              .app__close.material-icons.md-24(@click="openRewiew")= "close"
+              .app__close.material-icons.md-24(@click="toggleRewiew")= "close"
         .app__center
-          hr.app__line
+          .app__line.app__line_first
           .app__columns
             .app__column.app__column_first
               .app__doer
-                img.app__doer-avatar(src="images/724_crop_big_1.png")
+                .app__doer-avatar-container(src="images/724_crop_big_1.png")
+                  img.app__doer-avatar(src="images/724_crop_big_1.png")
                 .app__doer-info
                   h1.app__doer-service.app__h1= "Фоточки в свадебном платьице"
                   p.app__doer-name.app__p= "Алена Смирнова"
@@ -34,10 +37,17 @@ mixin addApp()
                 .app__rate
                   h2.app__rate-title.app__h2= "Пунктуальность"
                   rate
-              comment(:name="'comment1'" :max="500")
-              image-loader
-          hr.app__line
+            .app__column.app__column_second
+              .app__comment
+                comment(:name="'comment-1'" :max="500")
+              .app__image-loader
+                image-loader(:name="'image-loader-1'" :max="500")
         .app__bottom
+          .app__line
           .app__buttons
-            .app__button(@click="openRewiew")
+            .app__button.app__button_send(@click="send")
               +addButton("Отправить", "light-blue")
+            .app__button.app__button_next(@click="toggleNext")
+              +addButton("Продолжить", "light-blue")
+      .app__alert(@click="toggleRewiew")
+        +addButton("Спасибо, отзыв опубликован!", "green", true)

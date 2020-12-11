@@ -1,4 +1,31 @@
+.app__nav-left {
+  display: flex;
+}
+  .app__line {
+    border: none;
+    color: #EAECF0;
+    background-color: #EAECF0;
+    height: 1px;
+    border-radius: 1px;
+  }
+
+  .app__back {
+    display: none;
+  }
+
 .app {
+  &__comment {
+    margin-bottom: 16px;
+    height: 100px;
+  }
+
+  &__alert {
+    display: none;
+  }
+  &__handle {
+    display: none;
+  }
+
   &__rewiew {
     display: flex;
     align-items: center;
@@ -10,10 +37,125 @@
     width: 100vw;
     height: 100vh;
     &_hide { display: none }
+
+    &_sent {
+      .app__inputs {
+        display: none;
+      }
+      .app__alert {
+        display: block;
+      }
+    }
+
+    &_mobile {
+      align-items: flex-end;
+      .app__nav {
+        margin-left: 16px;
+      }
+      .app__rate {
+        margin-bottom: 14px;
+      }
+      .app__doer-service {
+        margin-top: 10px;
+      }
+      .app__doer-avatar {
+        width: 84px;
+        height: 56px;
+      }
+      .app__column_first {
+        margin-top: 0px;
+      }
+      .app__center {
+        border-top: 1px dashed white;
+        .app__line_first {
+          display: none;
+        }
+      }
+      .app__inputs {
+        max-width: 100%;
+        min-width: 100%;
+      }
+      .app__ratings {
+        flex-direction: column;
+      }
+      .app__doer {
+        flex-direction: column;
+        margin-bottom: 23px;
+      }
+      .app__columns {
+        margin-left: 16px;
+        margin-bottom: 0px;
+      }
+      .app__column_second {
+        display: none;
+      }
+      .app__button_send {
+        display: none;
+      }
+      .app__button_next {
+        display: block;
+      }
+      .app__bottom {
+        border-radius: 0px;
+      }
+      .app__handle {
+        display: block;
+        border: none;
+        color: #CFD3DD;
+        background-color: #CFD3DD;
+        width: 24px;
+        height: 3px;
+        border-radius: 4px;
+        position: absolute;
+        margin-left: calc(50% - 12px);
+        margin-bottom: 48px;
+      }
+    }
+    &_next {
+      .app__top {
+        border-radius: 0px;
+      }
+      .app__inputs {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .app__center {
+        flex: 1 1 auto;
+        flex-direction: column;
+      }
+      .app__column_first, .app__button_next {
+        display: none;
+      }
+      .app__column_second, .app__button_send {
+        display: block;
+      }
+      .app__back {
+        display: block;
+        color: #9AA2B7;
+        font-size: 23px;
+        margin-right: 12px;
+      }
+      .app__center {
+        border-top: 0px dashed white;
+        .app__line_first {
+          display: block;
+          margin-bottom: 14px;
+        }
+      }
+      .app__comment {
+        height: 146px;
+        margin-bottom: 36px;
+      }
+    }
   }
 
   &__inputs {
-    width: 560px;
+    max-width: 560px;
+  }
+
+  &__button_next {
+    display: none;
   }
 
   &__top {
@@ -26,14 +168,18 @@
   }
   &__center {
     background: #FFFFFF;
+    border-bottom: 1px dashed white;
   }
   &__bottom {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
     background: #FFFFFF;
     border-radius: 0px 0px 16px 16px;
     height: 67px;
+    .app__line {
+      min-width: 100%;
+    }
   }
 
   &__nav {
@@ -41,27 +187,27 @@
     justify-content: space-between;
     margin-left: 32px;
     margin-right: 16.4px;
-    margin-bottom: 14px;
+    margin-bottom: 13px;
     flex-grow: 1;
-  }
-  &__line {
-    border: none;
-    color: #EAECF0;
-    background-color: #EAECF0;
-    height: 1px;
-    border-radius: 1px;
   }
   &__columns {
     margin-left: 32px;
+    margin-bottom: 16px;
+    margin-right: 30px;
   }
   &__buttons {
+    margin-top: 16px;
     margin-right: 16px;
+    display: flex;
+    min-width: 100%;
+    justify-content: flex-end;
   }
 
   &__column {
     max-width: 506px;
     &_first {
       margin-top: 24px;
+      margin-bottom: 8px;
     }
   }
 
@@ -78,21 +224,22 @@
     color: #7F899E;
     opacity: 0.8;
     cursor: pointer;
-    margin-bottom: 1.5px;
+    margin-bottom: 2px;
   }
   &__doer {
     display: flex;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
   &__ratings {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 8px;
   }
 
   &__doer-avatar {
     border-radius: 6px;
     margin-right: 20px;
+    width: 102px;
+    height: 68px;
   }
   &__rate {
     margin-right: 50px;

@@ -11,7 +11,12 @@
   export default {
     data: function () {
       return {
-        hide: ""
+        rewiewHideFlag: "",
+        rewiewSentFlag: "",
+        rewiewNextFlag: "",
+        rewiewMobileFlag: "",
+        mobile_flag: false,
+        windowWidth: null,
       }
     },
     components: {
@@ -20,9 +25,26 @@
       ImageLoader
     },
     methods: {
-      openRewiew() {
-        this.hide == "app__rewiew_hide" ? this.hide = "" : this.hide = "app__rewiew_hide"
+      onResize: function () {
+        this.windowWidth = window.innerWidth;
+        this.rewiewMobileFlag = this.windowWidth < 511 ? "app__rewiew_mobile" : "";
+      },
+      toggleRewiew: function () {
+        this.rewiewHideFlag = this.rewiewHideFlag == "app__rewiew_hide" ?  "" : "app__rewiew_hide"
+      },
+      toggleNext: function () {
+        this.rewiewNextFlag = this.rewiewNextFlag == "app__rewiew_next" ?  "" : "app__rewiew_next"
+      },
+      send: function () {
+        this.rewiewSentFlag = "app__rewiew_sent"
       }
-    }
+    },
+    created() {
+      window.addEventListener('resize', this.onResize);
+      this.onResize();
+    },
+    beforeDestroy() {
+      window.removeEventListener('resize', this.onResize);
+    },
   }
 </script>

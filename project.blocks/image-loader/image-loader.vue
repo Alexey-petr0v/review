@@ -5,16 +5,19 @@
 
 <script>
   export default {
+    props: {
+      name: String
+    },
     data: function() {
       return {
-        images: new Array(),
+        images: [
+          {urlImage: "images/image_loader_1.png"},
+          {urlImage: "images/image_loader_2.png"},
+          {urlImage: "images/image_loader_3.png"},
+          {urlImage: "images/image_loader_4.png"}
+        ],
         curFile: null,
         uploadReady: true
-      }
-    },
-    computed: {
-      filled: function () {
-        return this.images.length > 4 ? "image-loader__images_filled" : "";
       }
     },
     methods: {
