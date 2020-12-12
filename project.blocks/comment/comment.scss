@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     max-width: 496px;
-    min-height: 100px;
+    min-height: 120px;
     .comment__text {
       background: #FAFAFA;
       box-sizing: border-box;
@@ -27,6 +27,12 @@
       display: flex;
       justify-content: flex-end;
       margin-top: 4px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 
       font-family: 'Montserrat Regular';
       font-style: normal;
@@ -41,6 +47,6 @@
 // Десктоп. Разрешение < 511px
 @media (max-width: 510px) {
   .comment__box {
-    min-height: 146px;
+    min-height: 166px;
   }
 }
