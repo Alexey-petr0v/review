@@ -12,7 +12,9 @@
       return {
         images: [],
         curFile: null,
-        uploadReady: true
+        uploadReady: true,
+        touchSupport: undefined,
+        touchpadClass: ""
       }
     },
     methods: {
@@ -37,6 +39,9 @@
         else {
           if(this.validFileType(this.curFile[0])) {
             this.images.push({urlImage: window.URL.createObjectURL(this.curFile[0])});
+            if (this.touchSupport) {
+              this.touchpadClass = "image-loader__delete-box_touchpad";
+            }
             this.$emit('image-loader-result', this.images);
           }
           else {
@@ -50,6 +55,13 @@
         	this.uploadReady = true;
         })
         this.images.splice(this.images.indexOf(event), 1);
+      }
+    },
+    mounted() {
+      this.touchSupport = 'ontouchstart' in window 
+      || window.DocumentTouch && document instanceof window.DocumentTouch;
+      if (this.touchSupport) {
+        this.touchpadClass = "image-loader__delete-box_touchpad";
       }
     }
   }

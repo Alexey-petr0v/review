@@ -5,7 +5,7 @@ mixin addImageLoader
         p.image-loader__icon-button.material-icons-round.md-24= "add"
         input.image-loader__input(v-if="uploadReady", v-bind:name="name", type="file", accept=".png, .jpg, .jpeg", v-on:change="updateImageDisplay")
       .image-loader__box-image.image-loader__elem(v-for="(item, index) in images.slice().reverse()", :key="item.urlImage")
-        .image-loader__delete-box
+        .image-loader__delete-box(:class="touchpadClass")
           .image-loader__delete-background(v-on:click="deleteImage(item)")
             p.image-loader__delete-button.material-icons-outlined.md-24= "delete_outline"
         img.image-loader__image(:src="item.urlImage")
