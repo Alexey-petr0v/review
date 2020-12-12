@@ -1,8 +1,14 @@
 .app {
   &__rewiew {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: fixed;
     background: rgba(0,0,0,.6);
     top: 0px;
@@ -15,7 +21,9 @@
     }
 
     &_mobile {
-      align-items: flex-end;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
       
       .app__inputs {
         max-width: 100%;
@@ -71,11 +79,17 @@
       }
 
       .app__doer {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         margin-bottom: 24px;
       }
       .app__ratings {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
       }
 
       .app__rate {
@@ -93,7 +107,9 @@
 
     &_next {
       &.app__rewiew_sent {
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         .app__inputs {
           display: none;
         }
@@ -103,8 +119,13 @@
       }
       
       .app__inputs {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         height: 100%;
       }
 
@@ -112,8 +133,13 @@
         border-radius: 0px;
       }
       .app__center {
-        flex: 1 1 auto;
-        flex-direction: column;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         border-top: 0px dashed white;
       }
 
@@ -150,9 +176,15 @@
   }
 
   &__top {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     height: 55px;
     background: #FFFFFF;
     border-radius: 16px 16px 0px 0px;
@@ -162,9 +194,16 @@
     border-bottom: 1px dashed white;
   }
   &__bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background: #FFFFFF;
     border-radius: 0px 0px 16px 16px;
     height: 68px;
@@ -174,15 +213,20 @@
     display: none;
   }
   &__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-left: 32px;
     margin-right: 16.4px;
     margin-bottom: 13px;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -205,12 +249,18 @@
   &__buttons {
     margin-top: 16px;
     margin-right: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-width: 100%;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 
   &__nav-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   &__column {
@@ -243,12 +293,17 @@
     margin-bottom: 2px;
   }
   &__doer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 28px;
   }
   &__ratings {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   &__comment {
     margin-bottom: 16px;

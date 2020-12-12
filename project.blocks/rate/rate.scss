@@ -1,17 +1,18 @@
 $color_no-active: #EAECF0;
 $color_active: #53C6D1;
 
-.rate {
-  display: -webkit-flex; 
+.rate { 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  &__box {
-    display: -webkit-flex; 
+  &__box { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
     &:hover {
       .rate__star .rate__title {

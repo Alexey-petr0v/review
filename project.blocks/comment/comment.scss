@@ -1,16 +1,24 @@
 .comment {
   &__box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     max-width: 496px;
     min-height: 120px;
     .comment__text {
       background: #FAFAFA;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       border: 1px solid #EAECF0;
       border-radius: 6px;
       resize: none;
-      flex-grow: 1;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
       padding: 11px;
       height: 100%;
 
@@ -24,12 +32,15 @@
       &:focus { outline: none }
     }
     .comment__characters {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: flex-end;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
       margin-top: 4px;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
-      -khtml-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
@@ -44,7 +55,7 @@
   }
 }
 
-// Десктоп. Разрешение < 511px
+// Разрешение < 511px
 @media (max-width: 510px) {
   .comment__box {
     min-height: 166px;

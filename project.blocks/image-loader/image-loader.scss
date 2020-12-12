@@ -1,8 +1,9 @@
 .image-loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -16,43 +17,59 @@
 
 .image-loader__box-image {
   overflow: hidden;
-  border-radius: 6px;
   margin-right: 8px;
   &:hover .image-loader__delete-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
 
 .image-loader__elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 80px;
   min-width: 80px;
   height: 80px;
   margin-bottom: 8px;
   margin-right: 8px;
   background-color: #F3F4F6;
+  border-radius: 6px;
 }
 
 .image-loader__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   max-width: 440px;
 }
 .image-loader__button {
   border: 1px solid #EAECF0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   cursor: pointer;
 }
 .image-loader__input {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
   opacity: 0;
   position: absolute;
 }
 
 .image-loader__input {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
   opacity: 0;
   position: absolute;
 }
@@ -63,11 +80,15 @@
 
 .image-loader__delete-box {
   position: absolute;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 80px;
   height: 80px;
   display: none;
   &_touchpad {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }

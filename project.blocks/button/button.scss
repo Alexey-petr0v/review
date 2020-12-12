@@ -3,19 +3,24 @@ $color_light-blue: rgba(83, 198, 209, 1);
 $color_green: rgba(21, 167, 88, 1);
 
 .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   &__background {
     height: 36px;
     min-width: 105px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 6px;
     background-color: $color_default;
     &_light-blue {
@@ -41,6 +46,8 @@ $color_green: rgba(21, 167, 88, 1);
     }
   }
   &__elements {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 10px 12px;
   }
@@ -59,9 +66,15 @@ $color_green: rgba(21, 167, 88, 1);
     height: 20px;
     background-color: rgba(255, 255, 255, .5);
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-left: 14px;
   }
   &__close-but-text {
