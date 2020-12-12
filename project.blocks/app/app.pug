@@ -1,10 +1,10 @@
 include ../button/button
 
 mixin addApp()
-  .app__box
+  form.app__box(id="app", @submit="send", action="https://google.com/", method="post")
     .app__button(@click="toggleRewiew")
       +addButton("Оставить отзыв", "light-blue")
-    .app__rewiew(:class="[rewiewMobileFlag, rewiewNextFlag, rewiewSentFlag, rewiewHideFlag]")
+    .app__rewiew(:class="[rewiewMobileClass, rewiewNextClass, rewiewSentClass, rewiewHideClass]")
       .app__inputs
         .app__top
           hr.app__handle
@@ -27,23 +27,23 @@ mixin addApp()
               .app__ratings
                 .app__rate
                   h2.app__rate-title.app__h2= "Скорость"
-                  rate(:currentRate=3)
+                  rate(@rate-result="getRate1Value" :name="'rate-1'" :currentRate=3)
                 .app__rate
                   h2.app__rate-title.app__h2= "Скорость отдачи видео"
-                  rate
+                  rate(@rate-result="getRate2Value" :name="'rate-2'")
                 .app__rate
                   h2.app__rate-title.app__h2= "Качество"
-                  rate
+                  rate(@rate-result="getRate3Value" :name="'rate-3'")
                 .app__rate
                   h2.app__rate-title.app__h2= "Пунктуальность"
-                  rate
+                  rate(@rate-result="getRate4Value" :name="'rate-4'")
             .app__column.app__column_second
               .app__comment
-                comment(:name="'comment-1'" :max="500")
+                comment(@comment-result="getCommentValue" :name="'comment-1'" :max="500")
               .app__image-loader
-                image-loader(:name="'image-loader-1'" :max="500")
+                image-loader(@image-loader-result="getimageLoaderArray" :name="'image-loader-1'" :max="500")
         .app__bottom
-          .app__line
+          .app__line.app__line_second
           .app__buttons
             .app__button.app__button_send(@click="send")
               +addButton("Отправить", "light-blue")

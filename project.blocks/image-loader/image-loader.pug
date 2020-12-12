@@ -3,7 +3,7 @@ mixin addImageLoader
     .image-loader__box(:data-name="name")
       label.image-loader__button.image-loader__elem
         p.image-loader__icon-button.material-icons-round.md-24= "add"
-        input.image-loader__input(v-bind:name="name", type="file", accept=".png, .jpg, .jpeg", v-on:change="updateImageDisplay", v-if="uploadReady")
+        input.image-loader__input(v-if="uploadReady", v-bind:name="name", type="file", accept=".png, .jpg, .jpeg", v-on:change="updateImageDisplay")
       .image-loader__box-image.image-loader__elem(v-for="(item, index) in images.slice().reverse()", :key="item.urlImage")
         .image-loader__delete-box
           .image-loader__delete-background(v-on:click="deleteImage(item)")

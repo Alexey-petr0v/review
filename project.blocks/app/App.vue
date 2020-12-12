@@ -11,12 +11,18 @@
   export default {
     data: function () {
       return {
-        rewiewHideFlag: "",
-        rewiewSentFlag: "",
-        rewiewNextFlag: "",
-        rewiewMobileFlag: "",
-        mobile_flag: false,
+        rewiewHideClass: "",
+        rewiewSentClass: "",
+        rewiewNextClass: "",
+        rewiewMobileClass: "",
         windowWidth: null,
+        errors: [],
+        rate1Value: "3",
+        rate2Value: null,
+        rate3Value: null,
+        rate4Value: null,
+        commentValue: "",
+        imageLoaderArray: []
       }
     },
     components: {
@@ -25,19 +31,44 @@
       ImageLoader
     },
     methods: {
+      getRate1Value: function (data) { this.rate1Value = data },
+      getRate2Value: function (data) { this.rate2Value = data },
+      getRate3Value: function (data) { this.rate3Value = data },
+      getRate4Value: function (data) { this.rate4Value = data },
+      getCommentValue: function (data) { this.commentValue = data },
+      getimageLoaderArray: function (data) { this.imageLoaderArray = data },
       onResize: function () {
         this.windowWidth = window.innerWidth;
-        this.rewiewMobileFlag = this.windowWidth < 511 ? "app__rewiew_mobile" : "";
+        this.rewiewMobileClass = this.windowWidth < 511 ? "app__rewiew_mobile" : "";
       },
       toggleRewiew: function () {
-        this.rewiewHideFlag = this.rewiewHideFlag == "app__rewiew_hide" ?  "" : "app__rewiew_hide"
+        this.rewiewHideClass = this.rewiewHideClass == "app__rewiew_hide" ?  "" : "app__rewiew_hide";
       },
       toggleNext: function () {
-        this.rewiewNextFlag = this.rewiewNextFlag == "app__rewiew_next" ?  "" : "app__rewiew_next"
+        this.rewiewNextClass = this.rewiewNextClass == "app__rewiew_next" ?  "" : "app__rewiew_next";
       },
-      send: function () {
-        this.rewiewSentFlag = "app__rewiew_sent"
+      send: function (e) {
+      if (this.rate1Value && this.rate2Value && this.rate3Value && this.rate4Value && (this.imageLoaderArray.length !== 0) && (this.commentValue !== "")) {
+        this.rewiewSentClass = "app__rewiew_sent";
+        return true;
       }
+
+      this.errors = [];
+
+      if (this.commentValue == "") {
+        this.errors.push(' напишите комментарий');
+      }
+      if (!this.rate1Value || !this.rate2Value || !this.rate3Value || !this.rate4Value) {
+        this.errors.push(' поставьте оценки');
+      }
+      if (this.imageLoaderArray.length == 0) {
+        this.errors.push(' добавьте фотографии');
+      }
+
+      alert("Пожалуйста,"+this.errors)
+
+      e.preventDefault();
+    }
     },
     created() {
       window.addEventListener('resize', this.onResize);

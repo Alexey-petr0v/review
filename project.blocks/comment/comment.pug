@@ -1,7 +1,7 @@
 mixin addComment
   .comment
     .comment__box
-      textarea.comment__text(v-bind:name="name" v-model="text" placeholder="Комментарий")
+      textarea.comment__text(v-bind:name="name", v-model="text", placeholder="Комментарий")
       .comment__characters
         span.comment__char-printed= "{{printed}}"
         span.comment__char-slash /

@@ -1,6 +1,6 @@
 mixin addRate
   .rate
     .rate__box
-      input(name="name", :value="currentRate", type="hidden")
+      input.rate__input(name="name", :value="currentRate", type="hidden")
       .rate__star(v-for="(item, index) in stars" :key="item.act")
         p.rate__title.material-icons-round.md-24(:class="item.act", :data-value="index+1", @click="addCheck")= "star_rate"

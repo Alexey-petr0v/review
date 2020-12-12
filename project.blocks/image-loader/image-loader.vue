@@ -10,12 +10,7 @@
     },
     data: function() {
       return {
-        images: [
-          {urlImage: "images/image_loader_1.png"},
-          {urlImage: "images/image_loader_2.png"},
-          {urlImage: "images/image_loader_3.png"},
-          {urlImage: "images/image_loader_4.png"}
-        ],
+        images: [],
         curFile: null,
         uploadReady: true
       }
@@ -37,21 +32,22 @@
       updateImageDisplay(event) {
         this.curFile = event.target.files;
         if (this.curFile.length == 0) {
-          alert("Изображение не выбрано")
+          alert("Изображение не выбрано");
         }
         else {
           if(this.validFileType(this.curFile[0])) {
-            this.images.push({urlImage: window.URL.createObjectURL(this.curFile[0])})
+            this.images.push({urlImage: window.URL.createObjectURL(this.curFile[0])});
+            this.$emit('image-loader-result', this.images);
           }
           else {
-            alert("Выбран неверный тип изображения")
+            alert("Выбран неверный тип изображения");
           }
         }
       },
       deleteImage(event) {
-      	this.uploadReady = false
+      	this.uploadReady = false;
         this.$nextTick(() => {
-        	this.uploadReady = true
+        	this.uploadReady = true;
         })
         this.images.splice(this.images.indexOf(event), 1);
       }
