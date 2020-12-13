@@ -20,18 +20,6 @@
       display: none;
     }
 
-    &_sent {
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      .app__inputs {
-        display: none;
-      }
-      .app__alert {
-        display: block;
-      }
-    }
-
     &_mobile {
       -webkit-box-align: end;
           -ms-flex-align: end;
@@ -166,7 +154,20 @@
         height: 166px;
       }
     }
+    
+    &.app__rewiew_sent {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      .app__inputs {
+        display: none;
+      }
+      .app__alert {
+        display: block;
+      }
+    }
   }
+
 
   &__inputs {
     max-width: 560px;
