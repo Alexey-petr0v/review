@@ -11,7 +11,7 @@
   export default {
     data: function () {
       return {
-        rewiewHideClass: "",
+        rewiewHideClass: "app__rewiew_hide",
         rewiewSentClass: "",
         rewiewNextClass: "",
         rewiewMobileClass: "",
